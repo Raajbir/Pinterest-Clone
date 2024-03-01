@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="w-full h-screen px-5 py-7 bg-zinc-700">
+    <div class="w-full flex flex-col items-center justify-center">
+
+    <h2 class="text-white text-3xl">Update Profile</h2>
+    <hr class="text-white w-1/3 mt-8">
+    
+    <form hidden id="uploadform" action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
+    <div class="h-32 w-32 mx-auto mt-10 rounded-full bg-zinc-500 overflow-hidden">
+        <img class="h-full w-full object-cover" src="/images/uploads/<%=user.profileImage%>" alt="">
+    </div>
+    <div class="relative flex items-center justify-center">
+        <span id="uploadicon" class="translate-x-12 translate-y-[-10px] h-8 w-8 bg-zinc-800 rounded-full absolute flex items-center justify-center hover:cursor-pointer">
+            <i class="ri-pencil-line text-white"></i>
+        </span>
+    </div>
+    </div>
+
+    <form class="w-1/3 mx-auto mt-7" action="/edit" method="post">
+        <input type="text" name="fullname" value="<%=user.fullname%>" class="px-2 py-3 w-full rounded-md mb-5">
+        <input type="number" name="number" value="<%=user.number%>" class="px-2 py-3 w-full rounded-md mb-5">
+        <input class="px-10 py-4 bg-red-700 w-full text-white rounded-md hover:cursor-pointer" type="submit" value="Update">
+    </form>
+
+</div>
+
+<script>
+    document.querySelector("#uploadicon").addEventListener("click", function(){
+        document.querySelector('#uploadform input').click();
+    })
+
+    document.querySelector("#uploadform input").addEventListener("change",function(){
+        document.querySelector("#uploadform").submit();
+    })
+</script>
+
+<%- include('./partials/footer.ejs') %>

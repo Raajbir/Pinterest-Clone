@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="w-full h-screen bg-zinc-700 px-10 py-7">
+    <h1 class="text-white text-3xl text-center mb-5">Your Pins</h1>
+    <div class="flex flex-wrap gap-10">
+        <% post.forEach(elem => { %>
+            <div class="card mb-2 overflow-hidden">
+                <img class="mb-2 rounded-lg object-cover max-h-48 max-w-32 rounded-lg bg-sky-700 mb-2" src="/images/uploads/<%=elem.image%>" alt="">
+                <a href="/post" class="block text-white text-lg"><%= elem.title %></a>
+                <a href="/post" class="block text-white text-sm opacity-50">@<%= elem.username.username %></a>
+            </div>
+        <%}); %>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

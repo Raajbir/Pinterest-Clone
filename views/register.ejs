@@ -1,0 +1,20 @@
+<%-include("./partials/header.ejs") %>
+
+<div class="w-full h-screen flex items-center justify-center bg-cover" style="background-image: url(https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  
+  <div class="min-w-2/3 rounded-2xl bg-#dadada px-10 py-3 bg-white flex flex-col items-center justify-center">
+    <img class="h-16 w-16 object-cover mb-3" src="https://static.vecteezy.com/system/resources/previews/023/986/660/large_2x/pinterest-logo-pinterest-logo-transparent-pinterest-icon-transparent-free-free-png.png" alt="">
+  <h3 class="text-2xl text-semibold">Welcome to Pinterest</h3>
+    <form action="/register" method="post" class="w-[270px]">
+      <input name="fullname" type="text" placeholder="Full Name" class="rounded-lg block border-2 border-zinc-600 px-3 py-2 w-full mt-2" >
+      <input name="username" type="text" placeholder="Username" class="rounded-lg block border-2 border-zinc-600 px-3 py-2 w-full mt-2" >
+      <input name="password" type="password" placeholder="Password" class="rounded-lg block border-2 border-zinc-600 px-3 py-2 w-full mt-2" >
+      <input name="number" type="number" placeholder="Phone Number" class="rounded-lg block border-2 border-zinc-600 px-3 py-2 w-full mt-2">
+      <input type="submit" value="register" class="hover:cursor-pointer hover:bg-red-900 text-lg rounded-full w-full px-4 py-3 text-white bg-red-700 mx-auto mt-5">
+    </form>
+    <a href="/" class="text-zinc-800 mt-3 mb-2">Already have an account?</a>
+  </div>
+
+</div>
+
+<%-include("./partials/footer.ejs") %>
